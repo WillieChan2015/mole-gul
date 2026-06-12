@@ -11,6 +11,28 @@ mod uninstall;
 use tauri::menu::{MenuBuilder, MenuItemBuilder, SubmenuBuilder};
 use tauri::Manager;
 
+/// 将绿灯按钮行为从全屏改为最大化（zoom）
+#[cfg(target_os = "macos")]
+fn set_green_button_to_zoom(window: &tauri::WebviewWindow) {
+    use objc2_app_kit::{NSWindow, NSWindowCollectionBehavior};
+
+    unsafe {
+        let ns_window = window
+            .ns_window()
+            .expect("Failed to get NSWindow handle")
+            as *mut NSWindow;
+        let ns_window_ref = &*ns_window;
+
+        let mut behavior = ns_window_ref.collectionBehavior();
+        // 移除 FullScreenPrimary，添加 FullScreenNone 明确禁止全屏
+        behavior.remove(NSWindowCollectionBehavior::FullScreenPrimary);
+        behavior.insert(NSWindowCollectionBehavior::FullScreenNone);
+        ns_window_ref.setCollectionBehavior(behavior);
+
+        eprintln!("=== Green button === behavior set to: {:?}", ns_window_ref.collectionBehavior());
+    }
+}
+
 fn build_menu(app: &tauri::AppHandle, lang: &str) -> tauri::Result<()> {
     let (file_label, close_label, quit_label, edit_label, undo_label, redo_label, cut_label, copy_label, paste_label, select_all_label, view_label, fullscreen_label, window_label, minimize_label, zoom_label) = if lang == "zh" {
         ("文件", "关闭窗口", "退出", "编辑", "撤销", "重做", "剪切", "复制", "粘贴", "全选", "视图", "全屏", "窗口", "最小化", "缩放")
@@ -101,6 +123,14 @@ pub fn run() {
                     app_handle.exit(0);
                 }
             });
+
+            // 将绿灯按钮行为从全屏改为最大化
+            #[cfg(target_os = "macos")]
+            {
+                if let Some(window) = app.get_webview_window("main") {
+                    set_green_button_to_zoom(&window);
+                }
+            }
 
             Ok(())
         })

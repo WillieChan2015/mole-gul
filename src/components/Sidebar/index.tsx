@@ -1,4 +1,5 @@
 import { useTranslation } from "react-i18next";
+import { getCurrentWindow } from "@tauri-apps/api/window";
 
 export type Tab =
   | "dashboard"
@@ -126,8 +127,15 @@ export default function Sidebar({
 
   return (
     <aside className="flex flex-col w-[220px] min-w-[220px] h-screen bg-bg-secondary/72 backdrop-blur-[20px] backdrop-saturate-[180%] border-r border-border select-none overflow-y-auto">
-      {/* Brand area */}
-      <div className="pt-8 pb-4 px-6">
+      {/* Brand area - 窗口拖拽区域 */}
+      <div
+        onMouseDown={(e) => {
+          if (e.button === 0) {
+            getCurrentWindow().startDragging();
+          }
+        }}
+        className="pt-8 pb-4 px-6 cursor-default"
+      >
         <h2 className="m-0 text-[13px] font-semibold uppercase tracking-wider text-text-secondary flex items-baseline">
           Mole
           <span className="text-[10px] text-text-secondary ml-1 font-normal tracking-normal">

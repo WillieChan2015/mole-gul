@@ -38,11 +38,6 @@
     margin: 0;
   }
 
-  /* Overlay 模式下为红绿灯按钮留出空间 */
-  :root {
-    padding-top: 28px;
-  }
-
   h1, h2, h3 {
     color: var(--text-primary);
   }

@@ -24,6 +24,8 @@ interface AppLineChartProps {
   yAxisLabel?: string;
   fill?: boolean;
   hideEmptyTicks?: boolean;
+  valueFormatter?: (value: number) => string;
+  labelFormatter?: (label: string) => string;
   height?: number;
   onClick?: (data: Record<string, unknown>) => void;
 }
@@ -35,6 +37,8 @@ export function AppLineChart({
   yAxisLabel,
   fill = false,
   hideEmptyTicks = false,
+  valueFormatter,
+  labelFormatter,
   height = 300,
   onClick,
 }: AppLineChartProps) {
@@ -59,9 +63,12 @@ export function AppLineChart({
         <XAxis
           dataKey={xAxisKey}
           tick={hideEmptyTicks
-            ? (props: { x?: string | number; y?: string | number; payload?: { value?: string } }) => {
+            ? (props: { x?: string | number; y?: string | number; payload?: { value?: string }; index?: number }) => {
                 const value = props.payload?.value;
-                if (!value) return null;
+                const idx = props.index ?? 0;
+                const prev = idx > 0 ? data[idx - 1]?.[xAxisKey] : undefined;
+                if (!value || value === prev) return null;
+                const label = typeof value === 'string' && value.length >= 5 ? value.slice(0, 5) : String(value);
                 return (
                   <text
                     x={Number(props.x)}
@@ -70,7 +77,7 @@ export function AppLineChart({
                     fill={theme.colors.text}
                     fontSize={theme.fontSize.small}
                   >
-                    {value}
+                    {label}
                   </text>
                 );
               }
@@ -95,6 +102,8 @@ export function AppLineChart({
           contentStyle={currentTooltipStyles.contentStyle}
           itemStyle={currentTooltipStyles.itemStyle}
           labelStyle={currentTooltipStyles.labelStyle}
+          formatter={valueFormatter ? ((value: number) => [valueFormatter(value)]) as never : undefined}
+          labelFormatter={labelFormatter as never}
         />
         <Legend />
         {lines.map((line, index) => (

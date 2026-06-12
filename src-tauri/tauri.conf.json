@@ -15,7 +15,8 @@
         "title": "Mole GUI",
         "width": 800,
         "height": 600,
-        "titleBarStyle": "Overlay"
+        "titleBarStyle": "Overlay",
+        "hiddenTitle": true
       }
     ],
     "security": {

@@ -136,17 +136,12 @@ export default function Dashboard() {
     : [];
 
   // 历史趋势数据
-  const trendData = history.map((h, i) => {
-    const prev = i > 0 ? history[i - 1] : null;
-    const minute = h.timestamp.slice(0, 5);
-    const showLabel = !prev || prev.timestamp.slice(0, 5) !== minute;
-    return {
-      time: showLabel ? minute : '',
-      CPU: h.cpuUsage,
-      [t('memoryUsed')]: h.memoryPercent,
-      [t('diskUsed')]: h.diskPercent,
-    };
-  });
+  const trendData = history.map((h) => ({
+    time: h.timestamp,
+    CPU: h.cpuUsage,
+    [t('memoryUsed')]: h.memoryPercent,
+    [t('diskUsed')]: h.diskPercent,
+  }));
 
   return (
     <div className="max-w-[900px] mx-auto py-8 px-4">
@@ -216,6 +211,8 @@ export default function Dashboard() {
                 xAxisKey="time"
                 yAxisLabel={t('usageRate') + ' (%)'}
                 hideEmptyTicks
+                valueFormatter={(v) => `${v.toFixed(1)}%`}
+                labelFormatter={(l) => l.slice(0, 5)}
                 height={250}
               />
             </div>
