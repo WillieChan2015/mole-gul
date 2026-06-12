@@ -12,7 +12,7 @@
   "app": {
     "windows": [
       {
-        "title": "mole-gui-tmp",
+        "title": "Mole GUI",
         "width": 800,
         "height": 600
       }
