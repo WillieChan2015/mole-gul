@@ -1,0 +1,14 @@
+{
+  "title": "清理",
+  "scan": "扫描",
+  "cleanSelected": "清理选中项 ({{count}})",
+  "cleanAll": "全部清理",
+  "scanningLines": "扫描中... ({{count}} 行)",
+  "potentialSpace": "可释放空间",
+  "items": "项目数",
+  "categories": "分类数",
+  "spaceDistribution": "空间分布",
+  "cleanProgress": "清理进度",
+  "ready": "就绪",
+  "cleanupCompleted": "清理完成。"
+}

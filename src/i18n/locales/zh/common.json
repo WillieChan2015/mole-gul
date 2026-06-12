@@ -1,0 +1,21 @@
+{
+  "loading": "加载中...",
+  "error": "错误",
+  "success": "成功",
+  "confirm": "确认",
+  "cancel": "取消",
+  "name": "名称",
+  "path": "路径",
+  "type": "类型",
+  "size": "大小",
+  "used": "已用",
+  "free": "空闲",
+  "refresh": "刷新",
+  "delete": "删除",
+  "scanning": "扫描中...",
+  "cleaning": "清理中...",
+  "analyzing": "分析中...",
+  "applying": "应用中...",
+  "deleting": "删除中...",
+  "purging": "清理中..."
+}

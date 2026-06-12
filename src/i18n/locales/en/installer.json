@@ -1,0 +1,8 @@
+{
+  "title": "Installer",
+  "scanning": "Scanning for installer files...",
+  "noFiles": "No installer files found.",
+  "fileCount": "Found {{count}} installer file(s) in ~/Downloads and ~/Documents",
+  "location": "Location",
+  "deleteConfirm": "Delete \"{{name}}\"?\n\nPath: {{path}}\nSize: {{size}}"
+}

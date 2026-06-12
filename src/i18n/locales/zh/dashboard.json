@@ -1,0 +1,17 @@
+{
+  "title": "仪表盘",
+  "brand": "品牌",
+  "cores": "核心数",
+  "systemTrend": "系统资源历史趋势",
+  "cpuDistribution": "CPU 核心分布",
+  "memoryDistribution": "内存分布",
+  "diskDistribution": "磁盘分区分布",
+  "cpuUsage": "使用率",
+  "memoryUsed": "已用",
+  "memoryFree": "空闲",
+  "diskUsed": "已用",
+  "diskFree": "可用",
+  "mainDisk": "主磁盘",
+  "total": "总计",
+  "autoRefresh": "自动刷新"
+}

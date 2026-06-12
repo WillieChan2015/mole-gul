@@ -1,0 +1,20 @@
+{
+  "title": "历史",
+  "chart": "图表",
+  "timeline": "时间线",
+  "loadingHistory": "正在加载历史记录...",
+  "noHistory": "暂无清理历史记录。",
+  "sessionCount": "显示 {{count}} 个会话（上限: {{limit}}）",
+  "cleanTrend": "清理量趋势",
+  "commandDistribution": "命令分布",
+  "cleanTypeDistribution": "清理类型分布",
+  "actionStats": "操作结果统计",
+  "freedSpace": "释放空间",
+  "success": "成功",
+  "failed": "失败",
+  "skipped": "跳过",
+  "removed": "移除",
+  "trashed": "回收",
+  "items": "项目数",
+  "operations": "操作数"
+}

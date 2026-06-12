@@ -1,0 +1,18 @@
+{
+  "title": "分析",
+  "placeholder": "输入要分析的路径（如 /Users/you）",
+  "chart": "图表",
+  "table": "表格",
+  "treemap": "树状图",
+  "sunburst": "旭日图",
+  "bar": "柱状图",
+  "totalSize": "总大小",
+  "files": "文件数",
+  "entries": "条目 ({{count}})",
+  "largeFiles": "大文件 ({{count}})",
+  "dir": "目录",
+  "file": "文件",
+  "dirSpaceDistribution": "目录空间分布",
+  "topLargeFiles": "大文件 TOP 10",
+  "dirFileDistribution": "目录/文件分布"
+}

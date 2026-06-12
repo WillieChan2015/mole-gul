@@ -1,0 +1,12 @@
+{
+  "dashboard": "Dashboard",
+  "clean": "Clean",
+  "analyze": "Analyze",
+  "optimize": "Optimize",
+  "uninstall": "Uninstall",
+  "history": "History",
+  "installer": "Installer",
+  "purge": "Purge",
+  "light": "Light",
+  "dark": "Dark"
+}

@@ -1,0 +1,21 @@
+{
+  "loading": "Loading...",
+  "error": "Error",
+  "success": "Success",
+  "confirm": "Confirm",
+  "cancel": "Cancel",
+  "name": "Name",
+  "path": "Path",
+  "type": "Type",
+  "size": "Size",
+  "used": "Used",
+  "free": "Free",
+  "refresh": "Refresh",
+  "delete": "Delete",
+  "scanning": "Scanning...",
+  "cleaning": "Cleaning...",
+  "analyzing": "Analyzing...",
+  "applying": "Applying...",
+  "deleting": "Deleting...",
+  "purging": "Purging..."
+}

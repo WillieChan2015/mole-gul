@@ -1,0 +1,20 @@
+{
+  "title": "History",
+  "chart": "Chart",
+  "timeline": "Timeline",
+  "loadingHistory": "Loading history...",
+  "noHistory": "No cleanup history found.",
+  "sessionCount": "Showing {{count}} sessions (limit: {{limit}})",
+  "cleanTrend": "Clean Trend",
+  "commandDistribution": "Command Distribution",
+  "cleanTypeDistribution": "Clean Type Distribution",
+  "actionStats": "Action Statistics",
+  "freedSpace": "Freed Space",
+  "success": "Success",
+  "failed": "Failed",
+  "skipped": "Skipped",
+  "removed": "Removed",
+  "trashed": "Trashed",
+  "items": "Items",
+  "operations": "Operations"
+}

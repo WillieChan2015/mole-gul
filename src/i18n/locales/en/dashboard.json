@@ -1,0 +1,17 @@
+{
+  "title": "Dashboard",
+  "brand": "Brand",
+  "cores": "Cores",
+  "systemTrend": "System Resource History",
+  "cpuDistribution": "CPU Core Distribution",
+  "memoryDistribution": "Memory Distribution",
+  "diskDistribution": "Disk Partition Distribution",
+  "cpuUsage": "Usage",
+  "memoryUsed": "Used",
+  "memoryFree": "Free",
+  "diskUsed": "Used",
+  "diskFree": "Free",
+  "mainDisk": "Main Disk",
+  "total": "Total",
+  "autoRefresh": "Auto Refresh"
+}

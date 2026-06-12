@@ -1,0 +1,8 @@
+{
+  "title": "安装器",
+  "scanning": "正在扫描安装文件...",
+  "noFiles": "未找到安装文件。",
+  "fileCount": "在 ~/Downloads 和 ~/Documents 中找到 {{count}} 个安装文件",
+  "location": "位置",
+  "deleteConfirm": "删除 \"{{name}}\"？\n\n路径: {{path}}\n大小: {{size}}"
+}

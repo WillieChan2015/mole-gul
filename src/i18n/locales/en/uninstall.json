@@ -1,0 +1,9 @@
+{
+  "title": "Uninstall",
+  "searchPlaceholder": "Search by name, bundle ID, or source...",
+  "appCount": "{{filtered}} of {{total}} apps",
+  "loadingApps": "Loading installed apps...",
+  "appSizeTop10": "App Size TOP 10",
+  "appSourceDistribution": "App Source Distribution",
+  "uninstallConfirm": "Uninstall \"{{name}}\"?\n\nPath: {{path}}\nBundle ID: {{bundleId}}"
+}

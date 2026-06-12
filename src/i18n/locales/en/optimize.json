@@ -1,0 +1,14 @@
+{
+  "title": "Optimize",
+  "scan": "Scan",
+  "applyOptimizations": "Apply Optimizations ({{count}})",
+  "dryRunMode": "DRY RUN MODE - No files will be modified",
+  "performanceDiagnosis": "Performance Diagnosis",
+  "categoryStats": "Optimization Category Stats",
+  "beforeAfterComparison": "Before/After Comparison",
+  "optimizationCount": "Optimization Count",
+  "before": "Before",
+  "after": "After",
+  "noComparisonData": "No comparison data available",
+  "optimizationsApplied": "Optimizations applied successfully."
+}

@@ -1,0 +1,18 @@
+{
+  "title": "Analyze",
+  "placeholder": "Enter path to analyze (e.g. /Users/you)",
+  "chart": "Chart",
+  "table": "Table",
+  "treemap": "Treemap",
+  "sunburst": "Sunburst",
+  "bar": "Bar",
+  "totalSize": "Total Size",
+  "files": "Files",
+  "entries": "Entries ({{count}})",
+  "largeFiles": "Large Files ({{count}})",
+  "dir": "Dir",
+  "file": "File",
+  "dirSpaceDistribution": "Directory Space Distribution",
+  "topLargeFiles": "Large Files TOP 10",
+  "dirFileDistribution": "Dir/File Distribution"
+}

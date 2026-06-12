@@ -1,0 +1,9 @@
+{
+  "title": "卸载",
+  "searchPlaceholder": "按名称、Bundle ID 或来源搜索...",
+  "appCount": "{{filtered}} / {{total}} 个应用",
+  "loadingApps": "正在加载已安装应用...",
+  "appSizeTop10": "应用大小 TOP 10",
+  "appSourceDistribution": "应用来源分布",
+  "uninstallConfirm": "卸载 \"{{name}}\"？\n\n路径: {{path}}\nBundle ID: {{bundleId}}"
+}

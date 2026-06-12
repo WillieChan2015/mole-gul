@@ -1,0 +1,12 @@
+{
+  "dashboard": "仪表盘",
+  "clean": "清理",
+  "analyze": "分析",
+  "optimize": "优化",
+  "uninstall": "卸载",
+  "history": "历史",
+  "installer": "安装器",
+  "purge": "深度清理",
+  "light": "浅色",
+  "dark": "深色"
+}

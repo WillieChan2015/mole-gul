@@ -1,0 +1,50 @@
+{
+  "name": "mole-gui",
+  "private": true,
+  "version": "0.3.0",
+  "description": "Native macOS GUI for Mole system maintenance tool",
+  "license": "MIT",
+  "repository": "https://github.com/WillieChan2015/mole-gui.git",
+  "author": "Willie",
+  "keywords": [
+    "mole",
+    "macos",
+    "system",
+    "maintenance",
+    "gui",
+    "tauri"
+  ],
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "tauri": "tauri",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@tailwindcss/vite": "^4.3.0",
+    "@tauri-apps/api": "^2",
+    "@tauri-apps/plugin-clipboard-manager": "^2.3.2",
+    "@tauri-apps/plugin-opener": "^2",
+    "@tauri-apps/plugin-updater": "^2.10.1",
+    "i18next": "^26.3.1",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-i18next": "^17.0.8",
+    "recharts": "^3.8.1",
+    "tailwindcss": "^4.3.0"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.2",
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
+    "@vitejs/plugin-react": "^6.0.0",
+    "jsdom": "^29.1.1",
+    "typescript": "~5.8.3",
+    "vite": "^8.0.0",
+    "vitest": "^4.1.8"
+  }
+}

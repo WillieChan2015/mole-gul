@@ -1,0 +1,14 @@
+{
+  "title": "Clean",
+  "scan": "Scan",
+  "cleanSelected": "Clean Selected ({{count}})",
+  "cleanAll": "Clean All",
+  "scanningLines": "Scanning... ({{count}} lines)",
+  "potentialSpace": "Potential space",
+  "items": "Items",
+  "categories": "Categories",
+  "spaceDistribution": "Space Distribution",
+  "cleanProgress": "Clean Progress",
+  "ready": "Ready",
+  "cleanupCompleted": "Cleanup completed successfully."
+}

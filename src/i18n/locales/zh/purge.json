@@ -1,0 +1,12 @@
+{
+  "title": "深度清理",
+  "scan": "扫描",
+  "purge": "清理",
+  "dryRunMode": "DRY RUN 模式 - 不会删除任何项目文件",
+  "wouldFree": "可释放",
+  "items": "项目数",
+  "free": "空闲空间",
+  "cleanableItems": "可清理项目",
+  "itemCount": "个项目",
+  "purgeCompleted": "深度清理完成。"
+}

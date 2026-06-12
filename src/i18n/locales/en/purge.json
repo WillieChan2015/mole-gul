@@ -1,0 +1,12 @@
+{
+  "title": "Purge",
+  "scan": "Scan",
+  "purge": "Purge",
+  "dryRunMode": "DRY RUN MODE - No project artifacts will be removed",
+  "wouldFree": "Would free",
+  "items": "Items",
+  "free": "Free",
+  "cleanableItems": "Cleanable Items",
+  "itemCount": "items",
+  "purgeCompleted": "Purge completed successfully."
+}

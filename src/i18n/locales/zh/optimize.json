@@ -1,0 +1,14 @@
+{
+  "title": "优化",
+  "scan": "扫描",
+  "applyOptimizations": "应用优化 ({{count}})",
+  "dryRunMode": "DRY RUN 模式 - 不会修改任何文件",
+  "performanceDiagnosis": "性能诊断",
+  "categoryStats": "优化项分类统计",
+  "beforeAfterComparison": "优化前后对比",
+  "optimizationCount": "优化项数量",
+  "before": "优化前",
+  "after": "优化后",
+  "noComparisonData": "暂无对比数据",
+  "optimizationsApplied": "优化已成功应用。"
+}
