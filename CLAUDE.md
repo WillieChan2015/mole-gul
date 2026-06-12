@@ -74,6 +74,12 @@ Tauri 命令使用 `#[tauri::command]` 宏，错误返回 `Result<T, String>`。
 - **TypeScript**：严格模式，`pnpm build` 包含类型检查
 - **测试**：前端用 Vitest + jsdom，Rust 用标准 `#[test]`
 
+## Git 操作规范
+
+- **禁止擅自执行 git 操作**：除非用户明确指示，否则不得执行任何 git 命令（如 `git add`、`git commit`、`git push`、`git merge`、`git checkout` 等）。
+- **读取命令除外**：`git status`、`git log`、`git diff`、`git show` 等只读操作不受此限制，可自由使用。
+- **目的**：确保用户完全控制版本历史，避免意外修改或提交。
+
 ## 环境注意事项
 
 - `pnpm tauri dev` 期望固定端口 1420，失败则报错

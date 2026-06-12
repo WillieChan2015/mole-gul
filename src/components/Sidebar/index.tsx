@@ -127,7 +127,7 @@ export default function Sidebar({
   return (
     <aside className="flex flex-col w-[220px] min-w-[220px] h-screen bg-bg-secondary/72 backdrop-blur-[20px] backdrop-saturate-[180%] border-r border-border select-none overflow-y-auto">
       {/* Brand area */}
-      <div className="p-6 pb-4">
+      <div className="pt-8 pb-4 px-6">
         <h2 className="m-0 text-[13px] font-semibold uppercase tracking-wider text-text-secondary flex items-baseline">
           Mole
           <span className="text-[10px] text-text-secondary ml-1 font-normal tracking-normal">

@@ -23,6 +23,7 @@ interface AppLineChartProps {
   xAxisKey: string;
   yAxisLabel?: string;
   fill?: boolean;
+  hideEmptyTicks?: boolean;
   height?: number;
   onClick?: (data: Record<string, unknown>) => void;
 }
@@ -33,6 +34,7 @@ export function AppLineChart({
   xAxisKey,
   yAxisLabel,
   fill = false,
+  hideEmptyTicks = false,
   height = 300,
   onClick,
 }: AppLineChartProps) {
@@ -56,7 +58,25 @@ export function AppLineChart({
         <CartesianGrid strokeDasharray="3 3" stroke={theme.colors.grid} />
         <XAxis
           dataKey={xAxisKey}
-          tick={{ fill: theme.colors.text, fontSize: theme.fontSize.small }}
+          tick={hideEmptyTicks
+            ? (props: { x?: string | number; y?: string | number; payload?: { value?: string } }) => {
+                const value = props.payload?.value;
+                if (!value) return null;
+                return (
+                  <text
+                    x={Number(props.x)}
+                    y={Number(props.y ?? 0) + 14}
+                    textAnchor="middle"
+                    fill={theme.colors.text}
+                    fontSize={theme.fontSize.small}
+                  >
+                    {value}
+                  </text>
+                );
+              }
+            : { fill: theme.colors.text, fontSize: theme.fontSize.small }
+          }
+          interval={0}
         />
         <YAxis
           tick={{ fill: theme.colors.text, fontSize: theme.fontSize.small }}
@@ -86,8 +106,8 @@ export function AppLineChart({
             stroke={line.color || theme.colors.series[index]}
             fill={fill ? line.color || theme.colors.series[index] : 'none'}
             strokeWidth={2}
-            dot={{ r: 5 }}
-            activeDot={{ r: 7 }}
+            dot={false}
+            activeDot={{ r: 5 }}
             animationDuration={800}
             animationEasing="ease-out"
           />

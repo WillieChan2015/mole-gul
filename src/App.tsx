@@ -86,6 +86,11 @@ function App() {
 
   return (
     <div className="flex h-screen overflow-hidden">
+      {/* 顶部拖拽区域 - Overlay 模式下启用窗口拖拽 */}
+      <div
+        data-tauri-drag-region
+        className="fixed top-0 left-0 right-0 h-7 z-50"
+      />
       <Sidebar
         activeTab={tab}
         onTabChange={setTab}

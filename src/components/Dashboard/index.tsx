@@ -88,13 +88,14 @@ export default function Dashboard() {
     return () => clearInterval(timer);
   }, [autoRefresh, refreshInterval, execute]);
 
-  // 保存历史数据（同一分钟内只保留一个数据点）
+  // 保存历史数据（每次刷新都记录）
   useEffect(() => {
     if (state.data) {
       const now = new Date();
       const timestamp = now.toLocaleTimeString('zh-CN', {
         hour: '2-digit',
         minute: '2-digit',
+        second: '2-digit',
       });
 
       const newPoint: HistoryDataPoint = {
@@ -104,18 +105,7 @@ export default function Dashboard() {
         diskPercent: state.data.diskPercent,
       };
 
-      setHistory((prev) => {
-        // 检查最后一个数据点是否在同一分钟内
-        if (prev.length > 0 && prev[prev.length - 1].timestamp === timestamp) {
-          // 更新最后一个数据点
-          const updated = [...prev];
-          updated[updated.length - 1] = newPoint;
-          return updated;
-        } else {
-          // 添加新数据点，保留最近 10 个
-          return [...prev.slice(-9), newPoint];
-        }
-      });
+      setHistory((prev) => [...prev.slice(-19), newPoint]);
     }
   }, [state.data]);
 
@@ -146,12 +136,17 @@ export default function Dashboard() {
     : [];
 
   // 历史趋势数据
-  const trendData = history.map((h) => ({
-    time: h.timestamp,
-    CPU: h.cpuUsage,
-    [t('memoryUsed')]: h.memoryPercent,
-    [t('diskUsed')]: h.diskPercent,
-  }));
+  const trendData = history.map((h, i) => {
+    const prev = i > 0 ? history[i - 1] : null;
+    const minute = h.timestamp.slice(0, 5);
+    const showLabel = !prev || prev.timestamp.slice(0, 5) !== minute;
+    return {
+      time: showLabel ? minute : '',
+      CPU: h.cpuUsage,
+      [t('memoryUsed')]: h.memoryPercent,
+      [t('diskUsed')]: h.diskPercent,
+    };
+  });
 
   return (
     <div className="max-w-[900px] mx-auto py-8 px-4">
@@ -185,14 +180,15 @@ export default function Dashboard() {
           </div>
           {/* 手动刷新按钮 */}
           <button
-            className="btn-ghost rounded-lg px-3 py-1.5 text-sm"
+            className="btn-ghost rounded-lg px-3 py-1.5 text-sm relative"
             onClick={execute}
             disabled={state.status === "loading"}
           >
-            {state.status === "loading" ? (
-              <span className="inline-block border-2 border-accent border-t-transparent rounded-full w-4 h-4 animate-spin" />
-            ) : (
-              t("common:refresh")
+            <span className={state.status === "loading" ? "invisible" : ""}>{t("common:refresh")}</span>
+            {state.status === "loading" && (
+              <span className="absolute inset-0 flex items-center justify-center">
+                <span className="inline-block border-2 border-accent border-t-transparent rounded-full w-4 h-4 animate-spin" />
+              </span>
             )}
           </button>
         </div>
@@ -219,6 +215,7 @@ export default function Dashboard() {
                 ]}
                 xAxisKey="time"
                 yAxisLabel={t('usageRate') + ' (%)'}
+                hideEmptyTicks
                 height={250}
               />
             </div>
